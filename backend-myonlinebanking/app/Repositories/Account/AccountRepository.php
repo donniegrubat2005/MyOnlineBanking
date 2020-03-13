@@ -19,6 +19,11 @@ class AccountRepository implements AccountInterface
         return $this->accountRepo->all();
     }
 
+    public function findbyId($id)
+    {
+        return $this->accountRepo->findOrFail($id);
+    }
+
     public function create(array $attributes)
     {
         return $this->accountRepo->create($attributes);

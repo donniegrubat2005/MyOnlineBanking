@@ -18,7 +18,7 @@ class CreateAccountsTable extends Migration
             $table->bigInteger('account_number');
             $table->string('account_name');
             $table->string('account_type');
-            $table->string('description');
+            $table->string('address');
             $table->timestamps();
         });
     }

@@ -9,6 +9,6 @@ class Account extends Model
     protected $table = 'accounts';
 
     protected $fillable = [
-        'account_number', 'account_name', 'account_type', 'description'
+        'account_number', 'account_name', 'account_type', 'address'
     ];
 }
