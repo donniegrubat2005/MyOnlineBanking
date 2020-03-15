@@ -9,6 +9,8 @@ import "jquery/src/jquery";
 import "popper.js";
 import "admin-lte/bower_components/bootstrap/dist/js/bootstrap.min.js";
 import "admin-lte/dist/js/adminlte.min.js";
+import VueToastr2 from "vue-toastr-2";
+import "vue-toastr-2/dist/vue-toastr-2.min.css";
 
 const baseURL = "http://localhost:8000/api";
 Vue.prototype.$axios = axios.create({
@@ -17,6 +19,9 @@ Vue.prototype.$axios = axios.create({
     "Content-type": "application/json"
   }
 });
+window.toastr = require("toastr");
+
+Vue.use(VueToastr2);
 
 Vue.config.productionTip = false;
 

@@ -15,12 +15,18 @@ const router = new VueRouter({
     {
       path: "/dashboard",
       name: "dashboard",
-      component: Dashboard
+      component: Dashboard,
+      meta: {
+        title: "Dashboard"
+      }
     },
     {
       path: "/profile",
       name: "profile",
-      component: Profile
+      component: Profile,
+      meta: {
+        title: "Profile"
+      }
     },
     {
       path: "/accounts",
@@ -28,19 +34,28 @@ const router = new VueRouter({
       component: Account,
       children: [
         {
-          path: "/accounts/list",
+          path: "list",
           name: "accountlist",
-          component: List
+          component: List,
+          meta: {
+            title: "Account List"
+          }
         },
         {
-          path: "/accounts/create",
+          path: "create",
           name: "createaccount",
-          component: Create
+          component: Create,
+          meta: {
+            title: "Create Account"
+          }
         },
         {
-          path: "/accounts/edit/:id",
+          path: "edit/:id",
           name: "editaccount",
-          component: Edit
+          component: Edit,
+          meta: {
+            title: "Edit Account"
+          }
         }
       ]
     }
@@ -48,4 +63,5 @@ const router = new VueRouter({
   linkActiveClass: "active",
   linkExactActiveClass: "active"
 });
+
 export default router;

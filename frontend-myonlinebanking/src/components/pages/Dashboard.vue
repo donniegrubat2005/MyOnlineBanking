@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>This is dashboard</h1>
+    <h1>Dashboard</h1>
     <button class="btn btn-primary" @click="test()">Connected</button>
   </div>
 </template>
@@ -17,8 +17,7 @@ export default {
         console.log(response);
       });
     }
-  },
-  mounted() {}
+  }
 };
 </script>
 

@@ -5,20 +5,19 @@
       <!-- Logo -->
       <router-link to="/dashboard" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
-        <span class="logo-mini"> <b>A</b>LT </span>
+        <span class="logo-mini">
+          <b>A</b>LT
+        </span>
         <!-- logo for regular state and mobile devices -->
-        <span class="logo-lg"> <b>My</b>MOB </span>
+        <span class="logo-lg">
+          <b>My</b>MOB
+        </span>
       </router-link>
 
       <!-- Header Navbar -->
       <nav class="navbar navbar-static-top" role="navigation">
         <!-- Sidebar toggle button-->
-        <a
-          href="#"
-          class="sidebar-toggle"
-          data-toggle="push-menu"
-          role="button"
-        >
+        <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
           <span class="sr-only">Toggle navigation</span>
         </a>
         <!-- Navbar Right Menu -->
@@ -41,16 +40,14 @@
                       <a href="#">
                         <div class="pull-left">
                           <!-- User Image -->
-                          <img
-                            :src="image"
-                            class="img-circle"
-                            alt="User Image"
-                          />
+                          <img :src="image" class="img-circle" alt="User Image" />
                         </div>
                         <!-- Message title and timestamp -->
                         <h4>
                           Support Team
-                          <small> <i class="fa fa-clock-o"></i> 5 mins </small>
+                          <small>
+                            <i class="fa fa-clock-o"></i> 5 mins
+                          </small>
                         </h4>
                         <!-- The message -->
                         <p>Why not buy a new awesome theme?</p>
@@ -202,26 +199,18 @@
           <div class="pull-left info">
             <p>Donnie Grubat</p>
             <!-- Status -->
-            <a href="#"> <i class="fa fa-circle text-success"></i> Online </a>
+            <a href="#">
+              <i class="fa fa-circle text-success"></i> Online
+            </a>
           </div>
         </div>
 
         <!-- search form (Optional) -->
         <form action="#" method="get" class="sidebar-form">
           <div class="input-group">
-            <input
-              type="text"
-              name="q"
-              class="form-control"
-              placeholder="Search..."
-            />
+            <input type="text" name="q" class="form-control" placeholder="Search..." />
             <span class="input-group-btn">
-              <button
-                type="submit"
-                name="search"
-                id="search-btn"
-                class="btn btn-flat"
-              >
+              <button type="submit" name="search" id="search-btn" class="btn btn-flat">
                 <i class="fa fa-search"></i>
               </button>
             </span>
@@ -298,12 +287,14 @@
       <!-- Content Header (Page header) -->
       <section class="content-header">
         <h1>
-          Page Header
+          {{ $route.meta.title }}
           <small>Optional description</small>
         </h1>
         <ol class="breadcrumb">
           <li>
-            <a href="#"> <i class="fa fa-dashboard"></i> Level </a>
+            <a href="#">
+              <i class="fa fa-dashboard"></i> Level
+            </a>
           </li>
           <li class="active">Here</li>
         </ol>
@@ -378,10 +369,7 @@
                 </h4>
 
                 <div class="progress progress-xxs">
-                  <div
-                    class="progress-bar progress-bar-danger"
-                    style="width: 70%"
-                  ></div>
+                  <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
                 </div>
               </a>
             </li>
@@ -390,9 +378,7 @@
         </div>
         <!-- /.tab-pane -->
         <!-- Stats tab content -->
-        <div class="tab-pane" id="control-sidebar-stats-tab">
-          Stats Tab Content
-        </div>
+        <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
         <!-- /.tab-pane -->
         <!-- Settings tab content -->
         <div class="tab-pane" id="control-sidebar-settings-tab">

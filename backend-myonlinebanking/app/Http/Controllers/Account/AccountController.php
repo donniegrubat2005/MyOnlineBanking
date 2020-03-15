@@ -35,6 +35,11 @@ class AccountController extends Controller
         return response()->json('successfully added!');
     }
 
+    public function edit($id)
+    {
+        $account = $this->accountRepo->findbyId($id);
+        return response()->json($account);
+    }
 
     public function show($id)
     {

@@ -2,19 +2,14 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Account\AccountController;
 
-
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::prefix('accounts')->group(function () {
+    Route::get('list', [AccountController::class, 'index'])->name('accounts.list');
+    Route::post('create', [AccountController::class, 'store'])->name('accounts.create');
+    Route::get('{id}/edit', [AccountController::class, 'edit'])->name('accounts.edit');
+    Route::put('{id}', [AccountController::class, 'update'])->name('accounts.update');
+    Route::delete('{id}', [AccountController::class, 'destroy'])->name('accounts.delete');
 });
 
-Route::get('/test', function () {
-    return response()->json([
-        'user' => [
-            'firstname' => 'Donnie',
-            'lastname' => 'Grubat'
-        ]
-    ]);
-});
-
-Route::resource('accounts', 'Account\AccountController');
+//Route::resource('accounts', 'Account\AccountController');

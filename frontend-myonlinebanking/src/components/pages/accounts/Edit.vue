@@ -17,6 +17,7 @@
                 type="text"
                 class="form-control"
                 id="account_number"
+                v-model="account.account_number"
                 placeholder="Account Number"
               />
             </div>
@@ -30,6 +31,7 @@
                 type="text"
                 class="form-control"
                 id="account_name"
+                v-model="account.account_name"
                 placeholder="Account Name"
               />
             </div>
@@ -43,6 +45,7 @@
                 type="text"
                 class="form-control"
                 id="account_type"
+                v-model="account.account_type"
                 placeholder="Account Type"
               />
             </div>
@@ -54,6 +57,7 @@
                 type="text"
                 class="form-control"
                 id="address"
+                v-model="account.address"
                 placeholder="Address"
               />
             </div>
@@ -61,7 +65,9 @@
         </div>
         <!-- /.box-body -->
         <div class="box-footer">
-          <button class="btn btn-info pull-right">Create Account</button>
+          <button class="btn btn-info pull-right" @click.prevent="update()">
+            Update Account
+          </button>
         </div>
         <!-- /.box-footer -->
       </form>
@@ -73,7 +79,7 @@
 export default {
   data() {
     return {
-      accounts: {},
+      account: {},
       error: {}
     };
   },
@@ -81,19 +87,29 @@ export default {
   methods: {
     update() {
       this.$axios
-        .patch("/accounts/" + this.$route.params.id, this.accounts)
+        .put("/accounts/" + this.$route.params.id, this.account)
         .then(response => {
-          this.accounts = response.data;
-          this.$router.push({ name: "dashboard" });
+          this.account = response.data;
+          this.$toastr.success(
+            "Records has been successfully saved!",
+            "Save Record",
+            {
+              progressBar: true,
+              setimeout: 2000,
+              preventDuplicate: true
+            }
+          );
+          this.$router.push({ name: "accountlist" });
         })
         .catch(error => (this.error = error.response.data.error));
     }
   },
-  mounted() {
+  created() {
     this.$axios
       .get("/accounts/" + this.$route.params.id + "/edit")
+      //.get("/edit")
       .then(response => {
-        this.accounts = response.data;
+        this.account = response.data;
       })
       .catch(error => (this.errors = error.response.data.errors));
   }
